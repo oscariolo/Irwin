@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgyegivm664k5"]
+
+[ext_resource type="Script" path="res://app/menus/level_menu/unit_level_selector.gd" id="1_agbu5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jf4h"]
+bg_color = Color(0.12549, 0.184314, 0.211765, 1)
+
+[sub_resource type="Theme" id="Theme_7f8qw"]
+Label/styles/normal = SubResource("StyleBoxFlat_1jf4h")
+
+[node name="UnitLevelSelector" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_agbu5")
+
+[node name="UnitLabel" type="Label" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_7f8qw")
+text = "Unidad 1
+Clasificacion de aves"
+
+[node name="LevelContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+alignment = 1

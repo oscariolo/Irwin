@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy3o32qmevk25"]
+
+[ext_resource type="Theme" uid="uid://cybm5gsbluf4u" path="res://Themes/course_component.tres" id="1_pvv20"]
+[ext_resource type="Script" path="res://app/common/components/CourseManager.gd" id="2_kty4l"]
+[ext_resource type="Texture2D" uid="uid://bwiktvpsa4652" path="res://assets/masks/whiteCircle.png" id="2_u0yxf"]
+[ext_resource type="Texture2D" uid="uid://cia8kqk8nlsgd" path="res://assets/icons/icon.svg" id="3_cfrqn"]
+
+[node name="CourseButton" type="HBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+offset_right = 337.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_pvv20")
+
+[node name="CourseManager" type="Node" parent="."]
+script = ExtResource("2_kty4l")
+
+[node name="UserIcon" type="TextureRect" parent="."]
+clip_children = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+texture = ExtResource("2_u0yxf")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="UserIcon"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 28.0
+offset_right = 69.0
+offset_bottom = 68.0
+texture = ExtResource("3_cfrqn")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+text = "Course1"
+icon_alignment = 1
+
+[connection signal="pressed" from="Button" to="CourseManager" method="_on_button_pressed"]

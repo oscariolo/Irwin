@@ -1,0 +1,10 @@
+[gd_resource type="JSON" format=3 uid="uid://2vam4c0ow1pd"]
+
+[resource]
+data = [{
+"id": "course_1",
+"name": "Course 1"
+}, {
+"id": "course_2",
+"name": "Course 2"
+}]

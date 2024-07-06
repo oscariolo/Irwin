@@ -1,0 +1,11 @@
+{
+	"animals":{
+		"fox":["rabbit","egg","frog"],
+		"frog":["fly","ant","spider"],
+		"bird":[""],
+		"snail":[""],
+		"fly":[""],
+		"ant":[""],
+		"spider":[""],
+	} 	
+}

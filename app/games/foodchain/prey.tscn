@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv5xnjvnvtu3f"]
+
+[ext_resource type="Script" path="res://app/games/foodchain/prey.gd" id="1_7qe41"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pqppb"]
+radius = 61.0
+
+[node name="Prey" type="Control" groups=["Prey"]]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.33
+mouse_filter = 1
+script = ExtResource("1_7qe41")
+
+[node name="PreySprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(93, 63)
+scale = Vector2(4, 4)
+
+[node name="PreyClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PreyClickArea"]
+position = Vector2(90, 63)
+shape = SubResource("CircleShape2D_pqppb")
+
+[connection signal="mouse_entered" from="PreyClickArea" to="." method="_on_prey_click_area_mouse_entered"]
+[connection signal="mouse_exited" from="PreyClickArea" to="." method="_on_prey_click_area_mouse_exited"]
