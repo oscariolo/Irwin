@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=8 format=3 uid="uid://ca5r1q0balh1g"]
 
-[ext_resource type="FontFile" uid="uid://bjxgdkm1t1jkc" path="res://assets/Fonts/bamboo-gothic/BambooGothic-Book.ttf" id="1_65vay"]
+[ext_resource type="FontFile" uid="uid://djwfybvbynn3f" path="res://Themes/AppFont.ttf" id="1_qmyex"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4t73"]
 bg_color = Color(0.219608, 0.701961, 0.447059, 1)
@@ -17,7 +17,7 @@ bg_color = Color(0.792157, 0.470588, 0.733333, 1)
 color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvqdk"]
-bg_color = Color(0.521569, 0.654902, 0.305882, 0.635294)
+bg_color = Color(0.352941, 0.686275, 0.396078, 1)
 corner_radius_top_left = 180
 corner_radius_top_right = 180
 corner_radius_bottom_right = 180
@@ -33,10 +33,11 @@ corner_radius_bottom_left = 50
 
 [resource]
 default_font_size = 20
+Button/fonts/font = ExtResource("1_qmyex")
 Button/styles/normal = SubResource("StyleBoxFlat_c4t73")
 Button/styles/pressed = SubResource("StyleBoxFlat_vunb4")
 HSeparator/styles/separator = SubResource("StyleBoxLine_46jn6")
-Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(1, 1, 1, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
 Label/constants/line_spacing = 3
@@ -44,7 +45,7 @@ Label/constants/outline_size = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
-Label/fonts/font = ExtResource("1_65vay")
+Label/fonts/font = ExtResource("1_qmyex")
 Label/styles/normal = SubResource("StyleBoxFlat_qvqdk")
 Panel/styles/panel = SubResource("StyleBoxFlat_aik3d")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_tvtgn")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cy3o32qmevk25"]
 
 [ext_resource type="Theme" uid="uid://cybm5gsbluf4u" path="res://Themes/course_component.tres" id="1_pvv20"]
-[ext_resource type="Script" path="res://app/common/components/CourseManager.gd" id="2_kty4l"]
+[ext_resource type="Script" path="res://app/common/components/custom_button_course.gd" id="2_jauom"]
 [ext_resource type="Texture2D" uid="uid://bwiktvpsa4652" path="res://assets/masks/whiteCircle.png" id="2_u0yxf"]
 [ext_resource type="Texture2D" uid="uid://cia8kqk8nlsgd" path="res://assets/icons/icon.svg" id="3_cfrqn"]
 
@@ -9,12 +9,8 @@
 custom_minimum_size = Vector2(200, 100)
 offset_right = 337.0
 offset_bottom = 100.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
 theme = ExtResource("1_pvv20")
-
-[node name="CourseManager" type="Node" parent="."]
-script = ExtResource("2_kty4l")
+script = ExtResource("2_jauom")
 
 [node name="UserIcon" type="TextureRect" parent="."]
 clip_children = 1
@@ -47,4 +43,4 @@ size_flags_stretch_ratio = 4.0
 text = "Course1"
 icon_alignment = 1
 
-[connection signal="pressed" from="Button" to="CourseManager" method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

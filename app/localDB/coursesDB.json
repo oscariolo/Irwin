@@ -1,0 +1,45 @@
+[{
+	"course_id":1,
+	"course_name":"Animales del mundo",
+	"levels":[
+		{
+		"id":1,
+		"theme":"Animales en tu entorno",
+		"name":"frog",
+		"game_type":1,
+		"parameters":{
+			"predator":"frog",
+			"lives":3,
+			"random":["fox","snail","bird","frog"],
+			"preys":["fly","ant","spider"]
+			}
+	},
+	{
+		"id":2,
+		"theme":"Animales en tu entorno",
+		"name":"fox",
+		"game_type":1,
+		"parameters":{
+			"predator":"fox",
+			"lives":2,
+			"random":["fox","spider","ant","fly"],
+			"preys":["snail","bird","frog"]
+			}
+	},
+	{
+		"id":3,
+		"theme":"Test other",
+		"name":"test",
+		"game_type":2,
+		"parameters":{
+			"predator":"frog",
+			"lives":2,
+			"random":["fox","spider","ant","fly"],
+			"preys":["snail","bird","frog"],
+	
+		}
+	},
+	
+	]
+},
+]

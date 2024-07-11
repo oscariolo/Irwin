@@ -1,9 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdndy6rtxydh8"]
+[gd_scene load_steps=21 format=3 uid="uid://cdndy6rtxydh8"]
 
 [ext_resource type="Script" path="res://app/games/foodchain/FoodChainGame.gd" id="1_gyl8m"]
-[ext_resource type="JSON" path="res://app/localDB/foodChain.json" id="2_14i76"]
-[ext_resource type="Script" path="res://app/games/foodchain/PreysManager.gd" id="3_nlo4h"]
+[ext_resource type="Texture2D" uid="uid://jsxe2sqlqih8" path="res://app/games/foodchain/background.jpg" id="2_no5ml"]
 [ext_resource type="PackedScene" uid="uid://cv5xnjvnvtu3f" path="res://app/games/foodchain/prey.tscn" id="4_qd835"]
+[ext_resource type="AudioStream" uid="uid://bh4mby4pqq6uo" path="res://app/common/assets/music/Correct.mp3" id="5_vu5wu"]
+[ext_resource type="Texture2D" uid="uid://bjypv45go322o" path="res://assets/icons/wrong.png" id="5_xpgfm"]
+[ext_resource type="Texture2D" uid="uid://kpgx53xgyr4r" path="res://assets/icons/right.png" id="5_yt8br"]
+[ext_resource type="AudioStream" uid="uid://ciiinji57bkfh" path="res://app/common/assets/music/Wrong.mp3" id="6_yj3sv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hl470"]
+font_size = 70
+font_color = Color(0.909804, 0.909804, 0.909804, 1)
+shadow_size = 15
+shadow_color = Color(0.698039, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iu7hh"]
+font_size = 50
 
 [sub_resource type="Animation" id="Animation_fnwlk"]
 length = 0.001
@@ -51,6 +63,186 @@ _data = {
 "idlepreys": SubResource("Animation_s20n7")
 }
 
+[sub_resource type="Animation" id="Animation_l4ih3"]
+resource_name = "FailedLesson"
+
+[sub_resource type="Animation" id="Animation_8o2tv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Correct:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Correct:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Wrong:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AudioPlayer/AudioStreamPlayer:stream")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_vu5wu")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../AudioPlayer/AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0w50a"]
+resource_name = "SuccesLesson"
+
+[sub_resource type="Animation" id="Animation_344h2"]
+resource_name = "correct"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Correct:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Correct:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioPlayer/AudioStreamPlayer:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_vu5wu")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AudioPlayer/AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(-0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_kcnx6"]
+resource_name = "wrong"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wrong:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wrong:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioPlayer/AudioStreamPlayer:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_yj3sv")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AudioPlayer/AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(-0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mqy0g"]
+_data = {
+"FailedLesson": SubResource("Animation_l4ih3"),
+"RESET": SubResource("Animation_8o2tv"),
+"SuccesLesson": SubResource("Animation_0w50a"),
+"correct": SubResource("Animation_344h2"),
+"wrong": SubResource("Animation_kcnx6")
+}
+
 [node name="FoodChainGame" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -60,7 +252,37 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_gyl8m")
-dbJson = ExtResource("2_14i76")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(356, 624)
+scale = Vector2(0.200755, 0.28)
+texture = ExtResource("2_no5ml")
+
+[node name="InfoUI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Lives" type="Label" parent="InfoUI"]
+layout_mode = 0
+offset_left = 323.0
+offset_top = -21.0
+offset_right = 377.0
+offset_bottom = 109.0
+text = "5"
+label_settings = SubResource("LabelSettings_hl470")
+
+[node name="Timer" type="Label" parent="InfoUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "60"
+label_settings = SubResource("LabelSettings_iu7hh")
 
 [node name="Predator" type="Control" parent="."]
 texture_filter = 1
@@ -88,7 +310,6 @@ offset_left = 0.359997
 offset_top = 0.359985
 offset_right = 0.359924
 offset_bottom = 0.199951
-script = ExtResource("3_nlo4h")
 
 [node name="Prey" parent="Preys" instance=ExtResource("4_qd835")]
 layout_mode = 2
@@ -113,3 +334,32 @@ root_node = NodePath("../../Preys")
 libraries = {
 "": SubResource("AnimationLibrary_pesf1")
 }
+
+[node name="ReinforceAnimations" type="AnimationPlayer" parent="Animations"]
+libraries = {
+"": SubResource("AnimationLibrary_mqy0g")
+}
+
+[node name="Correct" type="Sprite2D" parent="Animations"]
+visible = false
+position = Vector2(355, 510)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("5_yt8br")
+
+[node name="Wrong" type="Sprite2D" parent="Animations"]
+visible = false
+position = Vector2(353, 513)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("5_xpgfm")
+
+[node name="AudioPlayer" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayer"]
+stream = ExtResource("5_vu5wu")
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

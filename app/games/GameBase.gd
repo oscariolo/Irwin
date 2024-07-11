@@ -1,7 +1,7 @@
 extends Node
 class_name GameBase
 
-func setup(parameters:Dictionary)->void:
+func setup(_parameters:Dictionary)->void:
 	pass
 
 

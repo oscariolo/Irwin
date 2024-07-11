@@ -1,4 +1,15 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ifks2l7to85c"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ifks2l7to85c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kukg7"]
+bg_color = Color(0.062855, 0.162844, 0.0760749, 1)
+border_width_bottom = 15
+border_color = Color(0.129412, 0.321569, 0, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+anti_aliasing_size = 1.2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ootpt"]
 bg_color = Color(0.294118, 0.694118, 0.396078, 0)
@@ -45,6 +56,8 @@ anti_aliasing_size = 1.2
 
 [resource]
 Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 45
+Button/styles/disabled = SubResource("StyleBoxFlat_kukg7")
 Button/styles/focus = SubResource("StyleBoxFlat_ootpt")
 Button/styles/hover = SubResource("StyleBoxFlat_2qqb1")
 Button/styles/normal = SubResource("StyleBoxFlat_wfqg4")

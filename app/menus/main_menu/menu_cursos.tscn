@@ -1,30 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmqkbdc4xqcom"]
+[gd_scene load_steps=9 format=3 uid="uid://bmqkbdc4xqcom"]
 
 [ext_resource type="Script" path="res://app/menus/main_menu/menu_cursos.gd" id="1_oh6sc"]
+[ext_resource type="Script" path="res://app/menus/main_menu/CourseManager.gd" id="2_dljcn"]
 [ext_resource type="Texture2D" uid="uid://cia8kqk8nlsgd" path="res://assets/icons/icon.svg" id="2_njs6q"]
 [ext_resource type="Theme" uid="uid://ca5r1q0balh1g" path="res://Themes/main_screen.tres" id="2_wreat"]
 [ext_resource type="Texture2D" uid="uid://cbj4072yefdhx" path="res://assets/icons/setting.png" id="3_1wne3"]
+[ext_resource type="Texture2D" uid="uid://cdxhva80s106i" path="res://app/common/assets/backgrounds/background.png" id="3_8gfyd"]
 [ext_resource type="Texture2D" uid="uid://bwiktvpsa4652" path="res://assets/masks/whiteCircle.png" id="3_ex5l2"]
 [ext_resource type="Texture2D" uid="uid://dv31jgvu4qsll" path="res://assets/icons/3602745.png" id="4_l0u1p"]
 
 [node name="Menu_Cursos" type="Node"]
 script = ExtResource("1_oh6sc")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -9.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CourseManager" type="Node" parent="."]
+script = ExtResource("2_dljcn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(348, 658)
+rotation = 1.5708
+scale = Vector2(0.235, 0.235)
+texture = ExtResource("3_8gfyd")
 
 [node name="MainScreen" type="VBoxContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.998977, 0.997546)
@@ -109,7 +109,8 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 12.0
 vertical_scroll_mode = 2
 
-[node name="SubContainer" type="VBoxContainer" parent="MainScreen/ScrollContainer"]
+[node name="Course_Level_Container" type="VBoxContainer" parent="MainScreen/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -141,3 +142,4 @@ flat = true
 
 [connection signal="pressed" from="MainScreen/UpMenu/PlayerBar/MainButtons/NotificationButton" to="." method="_on_notification_button_pressed"]
 [connection signal="pressed" from="MainScreen/UpMenu/PlayerBar/MainButtons/ConfigButton" to="." method="_on_config_button_pressed"]
+[connection signal="pressed" from="MainScreen/DownMenu/ButtonContainer/CursosButton" to="." method="_on_cursos_button_pressed"]

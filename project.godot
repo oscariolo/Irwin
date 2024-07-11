@@ -15,6 +15,12 @@ run/main_scene="res://app/menus/main_menu/menu_cursos.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://assets/icons/icon.svg"
 
+[autoload]
+
+AppManager="*res://app/globals/AppManager.gd"
+SceneTransition="*res://app/globals/SceneTransition.tscn"
+AppDb="*res://app/globals/appDB.gd"
+
 [display]
 
 window/size/viewport_width=720
