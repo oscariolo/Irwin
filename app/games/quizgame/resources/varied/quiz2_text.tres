@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=2 format=3 uid="uid://dbehk7hfv7yao"]
+
+[ext_resource type="Script" path="res://app/games/quizgame/scripts/resources/question.gd" id="1_jorip"]
+
+[resource]
+script = ExtResource("1_jorip")
+question_info = "¿Qué come principalmente un panda gigante?"
+type = 0
+options = Array[String](["Hojas de eucalipto", "Bambú", "Frutas tropicales", "Insectos"])
+correct = "Bambú"

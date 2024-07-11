@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=4 format=3 uid="uid://cc6rx5am2jwac"]
+
+[ext_resource type="Script" path="res://app/games/quizgame/scripts/resources/question.gd" id="1_bg84w"]
+[ext_resource type="AudioStream" uid="uid://5hkamvvg7d1g" path="res://app/games/quizgame/media_quiz/quiz2_audio.mp3" id="1_e4lce"]
+[ext_resource type="Texture2D" uid="uid://c6ussibviid2q" path="res://app/games/quizgame/media_quiz/audio_image.png" id="2_6ocj5"]
+
+[resource]
+script = ExtResource("1_bg84w")
+question_info = "¿Qué animal está vocalizando en este audio?"
+type = 2
+question_image = ExtResource("2_6ocj5")
+question_audio = ExtResource("1_e4lce")
+options = Array[String](["Delfín nariz de botella", "Orca", "Ballena jorobada", "Narval"])
+correct = "Orca"

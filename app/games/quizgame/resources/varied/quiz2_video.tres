@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=3 format=3 uid="uid://baf8w2vv86cyj"]
+
+[ext_resource type="VideoStream" path="res://app/games/quizgame/media_quiz/quiz2_video.ogv" id="1_8ds7t"]
+[ext_resource type="Script" path="res://app/games/quizgame/scripts/resources/question.gd" id="1_g7odl"]
+
+[resource]
+script = ExtResource("1_g7odl")
+question_info = "¿Qué animal está cazando en este video?"
+type = 3
+question_video = ExtResource("1_8ds7t")
+options = Array[String](["Halcón peregrino", "Águila harpía", "Búho nival", "Águila calva"])
+correct = "Águila harpía"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=2 format=3 uid="uid://jyrswsio6nbk"]
+
+[ext_resource type="Script" path="res://app/games/quizgame/scripts/resources/question.gd" id="1_7gfv0"]
+
+[resource]
+script = ExtResource("1_7gfv0")
+question_info = "¿Cuántas patas tiene un insecto?"
+type = 0
+options = Array[String](["Ocho", "Seis", "Cuatro", "Diez"])
+correct = "Seis"

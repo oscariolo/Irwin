@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=3 format=3 uid="uid://btypc38ekc334"]
+
+[ext_resource type="Texture2D" uid="uid://b1lqgmahdltnt" path="res://app/games/quizgame/media_quiz/quiz1_image.jpg" id="1_6lgcu"]
+[ext_resource type="Script" path="res://app/games/quizgame/scripts/resources/question.gd" id="1_k02lj"]
+
+[resource]
+script = ExtResource("1_k02lj")
+question_info = "¿Qué animal vive en este hábitat?"
+type = 1
+question_image = ExtResource("1_6lgcu")
+options = Array[String](["Salamandra gigante japonesa", "Dragón de Komodo", "Nutria gigante", "Rata topo desnuda"])
+correct = "Salamandra gigante japonesa"

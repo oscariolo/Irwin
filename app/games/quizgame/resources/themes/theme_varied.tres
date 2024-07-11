@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="QuizTheme" load_steps=10 format=3 uid="uid://c4r0gvuy6oybs"]
+
+[ext_resource type="Script" path="res://app/games/quizgame/scripts/resources/theme.gd" id="1_gb7so"]
+[ext_resource type="Resource" uid="uid://dejoddlrnhhyl" path="res://app/games/quizgame/resources/varied/quiz1_audio.tres" id="2_uwp2o"]
+[ext_resource type="Resource" uid="uid://btypc38ekc334" path="res://app/games/quizgame/resources/varied/quiz1_image.tres" id="3_kfsul"]
+[ext_resource type="Resource" uid="uid://jyrswsio6nbk" path="res://app/games/quizgame/resources/varied/quiz1_text.tres" id="4_djcsl"]
+[ext_resource type="Resource" uid="uid://cc6rx5am2jwac" path="res://app/games/quizgame/resources/varied/quiz2_audio.tres" id="5_bgynk"]
+[ext_resource type="Resource" uid="uid://fnrvie4ak7v3" path="res://app/games/quizgame/resources/varied/quiz2_image.tres" id="6_wunp4"]
+[ext_resource type="Resource" uid="uid://dbehk7hfv7yao" path="res://app/games/quizgame/resources/varied/quiz2_text.tres" id="7_g4t20"]
+[ext_resource type="Resource" uid="uid://bxja1mifnhcm3" path="res://app/games/quizgame/resources/varied/quiz1_video.tres" id="8_spocb"]
+[ext_resource type="Resource" uid="uid://baf8w2vv86cyj" path="res://app/games/quizgame/resources/varied/quiz2_video.tres" id="9_nawps"]
+
+[resource]
+script = ExtResource("1_gb7so")
+theme = Array[Resource("res://app/games/quizgame/scripts/resources/question.gd")]([ExtResource("2_uwp2o"), ExtResource("3_kfsul"), ExtResource("4_djcsl"), ExtResource("5_bgynk"), ExtResource("6_wunp4"), ExtResource("7_g4t20"), ExtResource("8_spocb"), ExtResource("9_nawps")])

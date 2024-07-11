@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=4 format=3 uid="uid://dejoddlrnhhyl"]
+
+[ext_resource type="Script" path="res://app/games/quizgame/scripts/resources/question.gd" id="1_cj74v"]
+[ext_resource type="AudioStream" uid="uid://b4g0twl85kp1x" path="res://app/games/quizgame/media_quiz/quiz1_audio.mp3" id="1_t74uf"]
+[ext_resource type="Texture2D" uid="uid://c6ussibviid2q" path="res://app/games/quizgame/media_quiz/audio_image.png" id="2_ixj0y"]
+
+[resource]
+script = ExtResource("1_cj74v")
+question_info = "¿Qué animal hace este sonido?"
+type = 2
+question_image = ExtResource("2_ixj0y")
+question_audio = ExtResource("1_t74uf")
+options = Array[String](["Coyote", "Lobo ártico", "Zorro rojo", "Perro salvaje africano"])
+correct = "Lobo ártico"

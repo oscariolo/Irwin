@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=3 format=3 uid="uid://bxja1mifnhcm3"]
+
+[ext_resource type="Script" path="res://app/games/quizgame/scripts/resources/question.gd" id="1_7be2a"]
+[ext_resource type="VideoStream" path="res://app/games/quizgame/media_quiz/quiz1_video.ogv" id="1_p0p81"]
+
+[resource]
+script = ExtResource("1_7be2a")
+question_info = "¿Qué comportamiento animal se muestra en este video?"
+type = 3
+question_video = ExtResource("1_p0p81")
+options = Array[String](["Pulpo cazando", "Pulpo mimetizándose", "Pulpo construyendo una guarida", "Pulpo peleando"])
+correct = "Pulpo mimetizándose"

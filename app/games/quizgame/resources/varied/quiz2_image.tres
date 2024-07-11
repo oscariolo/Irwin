@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=3 format=3 uid="uid://fnrvie4ak7v3"]
+
+[ext_resource type="Script" path="res://app/games/quizgame/scripts/resources/question.gd" id="1_wxhek"]
+[ext_resource type="Texture2D" uid="uid://brrs8n1jx5ftf" path="res://app/games/quizgame/media_quiz/quiz2_image.jpg" id="1_x7gd2"]
+
+[resource]
+script = ExtResource("1_wxhek")
+question_info = "¿Qué animal es este?"
+type = 1
+question_image = ExtResource("1_x7gd2")
+options = Array[String](["Lémur", "Aye-Aye", "Musaraña arborícola", "Tamarino"])
+correct = "Aye-Aye"

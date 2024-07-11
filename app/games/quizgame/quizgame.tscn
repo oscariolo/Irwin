@@ -1,0 +1,157 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgbxq1yfwyyiu"]
+
+[ext_resource type="Script" path="res://app/games/quizgame/scripts/controllers/gamecontroller.gd" id="1_xgqxx"]
+[ext_resource type="AudioStream" uid="uid://mh0q8kw4ar78" path="res://app/games/quizgame/media_quiz/CorrectAudio.mp3" id="3_jq0tb"]
+[ext_resource type="AudioStream" uid="uid://l0jykrvqopfm" path="res://app/games/quizgame/media_quiz/WrongAudio.mp3" id="4_o81vo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_miarc"]
+font_size = 40
+
+[node name="QuizGame" type="CanvasLayer"]
+script = ExtResource("1_xgqxx")
+color_rigth = Color(0, 0.647059, 0, 1)
+color_wrong = Color(0.709804, 0, 0, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestionInfo" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 15.0
+offset_right = -17.0
+offset_bottom = 907.0
+grow_horizontal = 2
+
+[node name="QuestionText" type="Label" parent="Control/QuestionInfo"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 40
+text = "Question
+"
+label_settings = SubResource("LabelSettings_miarc")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ImageHolder" type="Panel" parent="Control/QuestionInfo"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+
+[node name="QuestionImage" type="TextureRect" parent="Control/QuestionInfo/ImageHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="QuestionVideo" type="VideoStreamPlayer" parent="Control/QuestionInfo/ImageHolder"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+expand = true
+
+[node name="QuestionAudio" type="AudioStreamPlayer" parent="Control/QuestionInfo/ImageHolder"]
+
+[node name="HSeparator" type="HSeparator" parent="Control/QuestionInfo"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.14
+
+[node name="QuestionHolder" type="VBoxContainer" parent="Control/QuestionInfo"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.95
+theme_override_constants/separation = 12
+
+[node name="ButtonOption1" type="Button" parent="Control/QuestionInfo/QuestionHolder"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="ButtonOption2" type="Button" parent="Control/QuestionInfo/QuestionHolder"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="ButtonOption3" type="Button" parent="Control/QuestionInfo/QuestionHolder"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="ButtonOption4" type="Button" parent="Control/QuestionInfo/QuestionHolder"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="GameOver" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 646.0
+offset_bottom = 920.0
+color = Color(0.129412, 0.403922, 0.427451, 1)
+
+[node name="Title" type="Label" parent="Control/GameOver"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -173.0
+offset_top = 112.0
+offset_right = 173.0
+offset_bottom = 207.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Aciertos:"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Control/GameOver"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -173.0
+offset_top = 338.0
+offset_right = 173.0
+offset_bottom = 433.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "0/0"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Control/GameOver"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -229.0
+offset_top = 679.0
+offset_right = 229.0
+offset_bottom = 769.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Volver"
+
+[node name="AudioCorrect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jq0tb")
+
+[node name="AudioIncorrect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_o81vo")
+
+[connection signal="pressed" from="Control/GameOver/Button" to="." method="_on_button_pressed"]
