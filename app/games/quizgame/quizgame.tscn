@@ -19,6 +19,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="QuestionInfo" type="VBoxContainer" parent="Control"]
 layout_mode = 1
@@ -26,7 +28,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_left = 15.0
 offset_right = -17.0
-offset_bottom = 907.0
+offset_bottom = 1264.0
 grow_horizontal = 2
 
 [node name="QuestionText" type="Label" parent="Control/QuestionInfo"]
@@ -103,8 +105,8 @@ theme_override_font_sizes/font_size = 30
 [node name="GameOver" type="ColorRect" parent="Control"]
 visible = false
 layout_mode = 0
-offset_right = 646.0
-offset_bottom = 920.0
+offset_right = 718.0
+offset_bottom = 1277.0
 color = Color(0.129412, 0.403922, 0.427451, 1)
 
 [node name="Title" type="Label" parent="Control/GameOver"]
@@ -113,9 +115,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -173.0
-offset_top = 112.0
+offset_top = 276.0
 offset_right = 173.0
-offset_bottom = 207.0
+offset_bottom = 371.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
 text = "Aciertos:"
@@ -127,9 +129,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -173.0
-offset_top = 338.0
+offset_top = 502.0
 offset_right = 173.0
-offset_bottom = 433.0
+offset_bottom = 639.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 100
 text = "0/0"
@@ -141,9 +143,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -229.0
-offset_top = 679.0
+offset_top = 843.0
 offset_right = 229.0
-offset_bottom = 769.0
+offset_bottom = 933.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
 text = "Volver"

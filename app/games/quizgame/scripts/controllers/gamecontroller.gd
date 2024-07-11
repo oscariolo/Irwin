@@ -1,4 +1,4 @@
-extends Node
+extends GameBase
 
 @export var color_rigth: Color
 @export var color_wrong: Color
@@ -18,6 +18,36 @@ var current_quiz: QuizQuestion:
 @onready var question_image = $Control/QuestionInfo/ImageHolder/QuestionImage
 @onready var question_video = $Control/QuestionInfo/ImageHolder/QuestionVideo
 @onready var question_audio = $Control/QuestionInfo/ImageHolder/QuestionAudio
+
+func _init():
+	setup({"questions": [{
+		"question_info": "¿Qué animal es este?",
+		"type": "IMAGE",
+		"question_image": "quiz2_image.jpg",
+		"question_audio": "",
+		"question_video": "",
+		"options": [
+			"Lémur",
+			"Aye-Aye",
+			"Musaraña arborícola",
+			"Tamarino"
+		],
+		"correct": "Aye-Aye"
+	},
+	{
+		 "question_info": "¿Qué animal está vocalizando en este audio?",
+		"type": "AUDIO",
+		"question_image": "audio_image.png",
+		"question_audio": "quiz2_audio.mp3",
+		"question_video": "",
+		"options": [
+			"Delfín nariz de botella",
+			"Orca",
+			"Ballena jorobada",
+			"Narval"
+		],
+		"correct": "Orca"
+	}]})
 
 func _ready() -> void:
 	for button in $Control/QuestionInfo/QuestionHolder.get_children():
@@ -108,29 +138,26 @@ func _on_audio_finished():
 	else:
 		play_count = 0
 
-func _on_button_pressed():
-	pass
-
 func _exit_tree():
 	question_video.disconnect("finished", _on_video_finished)
 	question_audio.disconnect("finished", _on_audio_finished)
 
 func setup(questions: Dictionary):
-	var list_questions = []
-	for question in questions:
+	var list_questions: Array[QuizQuestion] = []
+	for question in questions.get("questions"):
 		
 		var question_info = question.get("question_info", "")
 		var type = Enum.QuestionType[question.get("type", "Text")]
 
-		var image_path = "res://app/games/quizgame/media_quiz/{0}/".format(question.get("question_image", ""))
+		var image_path = "res://app/games/quizgame/media_quiz/%s/" % str(question.get("question_image", ""))
 		if image_path != "res://app/games/quizgame/media_quiz//":
 			question_image = load(image_path)
 
-		var audio_path = "res://app/games/quizgame/media_quiz/{0}/".format(question.get("question_audio", ""))
+		var audio_path = "res://app/games/quizgame/media_quiz/%s/" % str(question.get("question_audio", ""))
 		if audio_path != "res://app/games/quizgame/media_quiz//":
 			question_audio = load(audio_path)
 
-		var video_path = "res://app/games/quizgame/media_quiz/{0}/".format(question.get("question_video", ""))
+		var video_path = "res://app/games/quizgame/media_quiz/%s/" % str(question.get("question_video", ""))
 		if video_path != "res://app/games/quizgame/media_quiz//":
 			question_video = load(video_path)
 
@@ -140,4 +167,4 @@ func setup(questions: Dictionary):
 		var quizquestion = QuizQuestion.new(question_info, type, question_image, question_audio, question_video, options, correctanswer)
 		list_questions.append(quizquestion)
 	
-	quiz.load_quizs(list_questions)
+	quiz = QuizTheme.new(list_questions)

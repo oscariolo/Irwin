@@ -15,6 +15,6 @@ func _init(question_info, type, question_image, question_audio, question_video, 
 	self.question_image = question_image
 	self.question_audio = question_audio
 	self.question_video = question_video
-	self.options = options
+	self.options.append_array(options)
 	self.correct = correct
 	
