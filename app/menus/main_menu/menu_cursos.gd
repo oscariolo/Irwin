@@ -6,8 +6,6 @@ func _ready():
 		$CourseManager.load_levels(AppManager.loaded_course_id)	
 	$MainScreen/UpMenu/PlayerBar/UserInfo/Points.text = str(AppManager.global_points)
 	
-
-
 func _load_courses():
 	pass
 

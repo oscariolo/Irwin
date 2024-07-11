@@ -7,7 +7,6 @@ var max_attemps:=5
 var points:=0
 var max_loops:=5
 
-
 func _ready():
 	start_round()
 	$InfoUI/Lives.text = str(max_attemps)
@@ -19,6 +18,8 @@ func setup(parameters:Dictionary)->void: #setup variables for the current predat
 	preys = parameters.preys as Array #get all preys of current predator
 	random_wrong_preys= parameters.random as Array
 	random_wrong_preys.shuffle() #random preys in animal data
+	if parameters.lives: max_attemps = parameters.lives
+	
 	$Predator/PredatorSprite.set_texture(load("res://app/games/foodchain/assets/{0}/{0}.png".format([game_predator])))
 	for preyNode:Control in $Preys.get_children():
 		preyNode.connect("prey_clicked",_prey_clicked)
@@ -56,15 +57,12 @@ func _prey_clicked(prey_name:String):
 		$InfoUI/Lives.text = str(max_attemps)
 	if max_attemps == 0:
 		AppManager.return_to_menu()
-		queue_free()
 	if max_loops == 0:
 		await $Animations/ReinforceAnimations.animation_finished
 		AppManager.return_to_menu(points,true)
-		queue_free()
 
 func _process(_delta):
 	$InfoUI/Timer.text = str(int($GameTimer.time_left))
 
 func _on_game_timer_timeout():
 	AppManager.return_to_menu()
-	queue_free()

@@ -9,7 +9,7 @@
 		"game_type":1,
 		"parameters":{
 			"predator":"frog",
-			"lives":3,
+			"lives":100,
 			"random":["fox","snail","bird","frog"],
 			"preys":["fly","ant","spider"]
 			}

@@ -15,10 +15,20 @@ script = ExtResource("1_oh6sc")
 [node name="CourseManager" type="Node" parent="."]
 script = ExtResource("2_dljcn")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(348, 658)
+[node name="Background" type="Control" parent="."]
+custom_minimum_size = Vector2(1180, 980)
+layout_mode = 3
+anchor_top = 0.063
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.64
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundImage" type="Sprite2D" parent="Background"]
+position = Vector2(591, 666)
 rotation = 1.5708
-scale = Vector2(0.235, 0.235)
+scale = Vector2(0.235, 0.278415)
 texture = ExtResource("3_8gfyd")
 
 [node name="MainScreen" type="VBoxContainer" parent="."]
