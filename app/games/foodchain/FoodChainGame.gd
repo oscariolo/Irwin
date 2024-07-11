@@ -6,6 +6,15 @@ var random_wrong_preys:Array = []
 var max_attemps:=5
 var points:=0
 var max_loops:=5
+var parameters
+func _init():
+	parameters = {
+			"predator":"fox",
+			"lives":2,
+			"random":["fox","spider","ant","fly"],
+			"preys":["snail","bird","frog"]
+			}
+	setup(parameters)
 
 func _ready():
 	start_round()
@@ -13,18 +22,20 @@ func _ready():
 	$InfoUI/Timer.text = str(int($GameTimer.time_left))
 
 
-func setup(parameters:Dictionary)->void: #setup variables for the current predator
-	game_predator = parameters.predator
-	preys = parameters.preys as Array #get all preys of current predator
-	random_wrong_preys= parameters.random as Array
+func setup(entry_parameters:Dictionary)->void: #setup variables for the current predator
+	game_predator = entry_parameters.predator
+	preys = entry_parameters.preys as Array #get all preys of current predator
+	random_wrong_preys= entry_parameters.random as Array
 	random_wrong_preys.shuffle() #random preys in animal data
-	if parameters.lives: max_attemps = parameters.lives
+	if entry_parameters.lives: max_attemps = entry_parameters.lives
 	
-	$Predator/PredatorSprite.set_texture(load("res://app/games/foodchain/assets/{0}/{0}.png".format([game_predator])))
-	for preyNode:Control in $Preys.get_children():
-		preyNode.connect("prey_clicked",_prey_clicked)
+	
 	
 func start_round():
+	if $Predator/PredatorSprite.texture == null:
+		$Predator/PredatorSprite.set_texture(load("res://app/games/foodchain/assets/{0}/{0}.png".format([game_predator])))
+		for preyNode:Control in $Preys.get_children():
+			preyNode.connect("prey_clicked",_prey_clicked)
 	var round_preys = []
 	current_prey = preys[randi()%preys.size() - 1] #select a random prey for this round
 	round_preys.append(random_wrong_preys[0])

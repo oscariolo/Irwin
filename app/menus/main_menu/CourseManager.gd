@@ -19,20 +19,17 @@ func load_levels(course_pressed:int):
 	clear_scroll()
 	AppManager.loaded_course_id = course_pressed
 	var unit_levels = AppDb.get_levels_id_by_unit(course_pressed) as Dictionary #tengo el diccionario de todos los ids de los cursos por tema
-	var unlocked = AppDb.get_user_level_unlocks(course_pressed) as Dictionary
-	var already_unlocked = 0
-	for un in unlocked.values():
-		if un:
-			already_unlocked+=1
+	var unlocked = AppDb.get_user_level_unlocks(course_pressed) #cantidad de niveles desbloqueados
+	
 	var unit_component = preload("res://app/menus/level_menu/unit_level_selector.tscn")
 	for unit in unit_levels.keys(): #creacion de cada componente por unidad
 		var new_unit_component = unit_component.instantiate()
 		new_unit_component.levels_ids = unit_levels.get(unit) #asignacion de ids para los botones
 		new_unit_component.unit_theme = unit 
-		new_unit_component.set_unlocked_levels(already_unlocked)
+		if unlocked >=0:
+			new_unit_component.set_unlocked_levels(unlocked)
+		unlocked -= len(unit_levels.get(unit))
 		get_node("%Course_Level_Container").add_child(new_unit_component)
-		for i in len(unit_levels.get(unit)):
-			already_unlocked -=1
 	
 	for button in get_tree().get_nodes_in_group("LevelButton"):
 		button.connect("level_clicked",load_level_game)

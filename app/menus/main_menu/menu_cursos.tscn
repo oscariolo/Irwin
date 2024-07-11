@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://app/menus/main_menu/menu_cursos.gd" id="1_oh6sc"]
 [ext_resource type="Script" path="res://app/menus/main_menu/CourseManager.gd" id="2_dljcn"]
 [ext_resource type="Texture2D" uid="uid://cia8kqk8nlsgd" path="res://assets/icons/icon.svg" id="2_njs6q"]
-[ext_resource type="Theme" uid="uid://ca5r1q0balh1g" path="res://Themes/main_screen.tres" id="2_wreat"]
 [ext_resource type="Texture2D" uid="uid://cbj4072yefdhx" path="res://assets/icons/setting.png" id="3_1wne3"]
-[ext_resource type="Texture2D" uid="uid://cdxhva80s106i" path="res://app/common/assets/backgrounds/background.png" id="3_8gfyd"]
 [ext_resource type="Texture2D" uid="uid://bwiktvpsa4652" path="res://assets/masks/whiteCircle.png" id="3_ex5l2"]
+[ext_resource type="Texture2D" uid="uid://3lfdjr1e8l5x" path="res://app/common/assets/backgrounds/background2.png" id="3_lne1y"]
 [ext_resource type="Texture2D" uid="uid://dv31jgvu4qsll" path="res://assets/icons/3602745.png" id="4_l0u1p"]
+[ext_resource type="Theme" uid="uid://j4mgyprwtdlb" path="res://Themes/quizgameTheme.tres" id="4_o66qo"]
 
 [node name="Menu_Cursos" type="Node"]
 script = ExtResource("1_oh6sc")
@@ -16,20 +16,27 @@ script = ExtResource("1_oh6sc")
 script = ExtResource("2_dljcn")
 
 [node name="Background" type="Control" parent="."]
-custom_minimum_size = Vector2(1180, 980)
 layout_mode = 3
-anchor_top = 0.063
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -80.64
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 6.28319
 
-[node name="BackgroundImage" type="Sprite2D" parent="Background"]
-position = Vector2(591, 666)
-rotation = 1.5708
-scale = Vector2(0.235, 0.278415)
-texture = ExtResource("3_8gfyd")
+[node name="TextureRect" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -2.0
+offset_right = 3.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lne1y")
+expand_mode = 1
 
 [node name="MainScreen" type="VBoxContainer" parent="."]
 anchors_preset = 15
@@ -38,7 +45,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.998977, 0.997546)
-theme = ExtResource("2_wreat")
+theme = ExtResource("4_o66qo")
 
 [node name="UpMenu" type="PanelContainer" parent="MainScreen"]
 layout_mode = 2

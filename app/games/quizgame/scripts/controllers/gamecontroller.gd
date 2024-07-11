@@ -168,3 +168,10 @@ func setup(questions: Dictionary):
 		list_questions.append(quizquestion)
 	
 	quiz = QuizTheme.new(list_questions)
+
+
+func _on_volver_pressed():
+	if correct >= int(quiz.theme.size()/2):
+		AppManager.return_to_menu(5,true)
+	else:
+		AppManager.return_to_menu(0,false)

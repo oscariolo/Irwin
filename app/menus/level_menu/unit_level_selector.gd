@@ -1,7 +1,7 @@
 extends VBoxContainer
 var unit_theme:String
 var levels_ids:Array = []
-var unlocked_levels:int
+var unlocked_levels:int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,7 +29,6 @@ func _level_layout():
 		$LevelContainer.add_child(new_button)
 		$LevelContainer.add_child(HSeparator.new())
 		i+=1
-		print(unlocked_levels)
 
 func set_unlocked_levels(unlocked:int):
 	unlocked_levels = unlocked

@@ -13,8 +13,8 @@
 			"random":["fox","snail","bird","frog"],
 			"preys":["fly","ant","spider"]
 			}
-	},
-	{
+		},
+		{
 		"id":2,
 		"theme":"Animales en tu entorno",
 		"name":"fox",
@@ -25,21 +25,40 @@
 			"random":["fox","spider","ant","fly"],
 			"preys":["snail","bird","frog"]
 			}
-	},
-	{
+		},
+		{
 		"id":3,
-		"theme":"Test other",
+		"theme":"Animales en tu entorno",
 		"name":"test",
 		"game_type":2,
-		"parameters":{
-			"predator":"frog",
-			"lives":2,
-			"random":["fox","spider","ant","fly"],
-			"preys":["snail","bird","frog"],
-	
-		}
+		"parameters":{"questions": [{
+		"question_info": "¿Qué animal es este?",
+		"type": "IMAGE",
+		"question_image": "quiz2_image.jpg",
+		"question_audio": "",
+		"question_video": "",
+		"options": [
+			"Lémur",
+			"Aye-Aye",
+			"Musaraña arborícola",
+			"Tamarino"
+		],
+		"correct": "Aye-Aye"
 	},
-	
-	]
-},
+	{
+		 "question_info": "¿Qué animal está vocalizando en este audio?",
+		"type": "AUDIO",
+		"question_image": "audio_image.png",
+		"question_audio": "quiz2_audio.mp3",
+		"question_video": "",
+		"options": [
+			"Delfín nariz de botella",
+			"Orca",
+			"Ballena jorobada",
+			"Narval"
+		],
+		"correct": "Orca"
+	}]}
+		},]
+	}
 ]

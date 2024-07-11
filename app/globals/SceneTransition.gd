@@ -27,11 +27,3 @@ func load_scene(path_to_scene:String,parameters:Dictionary,tip:String):
 	get_tree().root.add_child(new_game)
 	get_tree().current_scene = new_game
 	$AnimationPlayer.play_backwards('disolve')
-
-#const path_to_game = "res://app/games/foodchain/FoodChainGame.tscn"
-			#var new_game = preload(path_to_game).instantiate()
-			#new_game.setup(level_info.parameters)
-			#var last_scene = get_tree().current_scene
-			#await SceneTransition.load_scene_play("")
-			#get_tree().root.add_child(new_game)
-			#last_scene.queue_free()

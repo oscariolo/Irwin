@@ -1,0 +1,70 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://j4mgyprwtdlb"]
+
+[ext_resource type="FontFile" uid="uid://djwfybvbynn3f" path="res://Themes/AppFont.ttf" id="1_423vb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6i3u"]
+bg_color = Color(0.294118, 0.694118, 0.396078, 1)
+border_width_bottom = 15
+border_color = Color(0.129412, 0.321569, 0, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+anti_aliasing_size = 1.2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n407w"]
+bg_color = Color(0.294118, 0.694118, 0.396078, 1)
+border_width_bottom = 15
+border_color = Color(0.129412, 0.321569, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(1, 1, 1, 0.176471)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nf06"]
+bg_color = Color(0.294118, 0.694118, 0.396078, 1)
+border_color = Color(0.129412, 0.321569, 0, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+anti_aliasing_size = 1.2
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_46jn6"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvqdk"]
+bg_color = Color(0.352941, 0.686275, 0.396078, 1)
+corner_radius_top_left = 180
+corner_radius_top_right = 180
+corner_radius_bottom_right = 180
+corner_radius_bottom_left = 180
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvtgn"]
+bg_color = Color(0.0784314, 0.713726, 0.415686, 1)
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[resource]
+default_font_size = 20
+Button/fonts/font = ExtResource("1_423vb")
+Button/styles/hover = SubResource("StyleBoxFlat_f6i3u")
+Button/styles/normal = SubResource("StyleBoxFlat_n407w")
+Button/styles/pressed = SubResource("StyleBoxFlat_5nf06")
+HSeparator/styles/separator = SubResource("StyleBoxLine_46jn6")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/fonts/font = ExtResource("1_423vb")
+Label/styles/normal = SubResource("StyleBoxFlat_qvqdk")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_tvtgn")

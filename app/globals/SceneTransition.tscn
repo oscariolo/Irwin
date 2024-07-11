@@ -66,6 +66,7 @@ _data = {
 font_size = 30
 
 [node name="SceneTransition" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_gltx1")
 
 [node name="disolve_rect" type="ColorRect" parent="."]

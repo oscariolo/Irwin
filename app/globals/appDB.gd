@@ -1,14 +1,11 @@
 extends Node
 
-func chekc_if_unlocked(level_id:int):
-	pass
-
 func unlock_next_level_from(course_id:int):
 	var file_path = "res://app/localDB/userData.json"
 	var json_as_text = FileAccess.get_file_as_string(file_path)
 	var user_data = JSON.parse_string(json_as_text)
 	var unlocks = user_data.get(AppManager.current_user).courses_progress.get(str(course_id))
-	unlocks[str(AppManager.loaded_level)] = true
+	unlocks +=1
 	user_data[AppManager.current_user]["courses_progress"][str(course_id)] = unlocks
 	var updated_json_as_text = JSON.stringify(user_data)
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
